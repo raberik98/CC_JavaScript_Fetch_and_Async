@@ -1,0 +1,24 @@
+{
+  "name": "cc_javascript_fetch_and_async",
+  "version": "1.0.0",
+  "description": "This is a simple test project. Please navigate to the ...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raberik98/CC_JavaScript_Fetch_and_Async.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raberik98/CC_JavaScript_Fetch_and_Async/issues"
+  },
+  "homepage": "https://github.com/raberik98/CC_JavaScript_Fetch_and_Async#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.1"
+  }
+}
