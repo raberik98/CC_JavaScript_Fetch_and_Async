@@ -1,13 +1,6 @@
 // import fetch from "node-fetch";
 
-// fetch("http://localhost:3001/2").then((response) => {
-//   response.json().then((data) => {console.log(data);})
-// }).catch((error) => {
-//   console.log("Error");
-// })
-
-
-const fetchSimulation = (number) => {
+const fetch = (number) => {
   const data = {
         name: "Professor",
         skills: ["IT","Math","Communication"],
@@ -25,25 +18,114 @@ const fetchSimulation = (number) => {
   });
 }
 
+// async function name() {
+//   let resp = await fetch("http://localhost:3001/2")
+//   //console.log(resp);
+//   let data = await resp.json()
+//   console.log(data);
+//  // console.log(`The age key value pair is: ${data.age}`);
+// }
 
-async function allTheFunctionsAreHere() {
-  let a =  fetchSimulation(2)
-  let b =  fetchSimulation(4)
-  let c =  fetchSimulation(6)
-  let data = await Promise.all([a,b,c])
-
-  let result = data[0].number + data[1].number + data[2].number
-  console.log("The result is: " + result);
-
+async function requestData(number) {
+  try {
+    let data = await fetch(number)
+    return data
+  } catch (error) {
+    console.log(error);
+  }
 }
-allTheFunctionsAreHere()
 
-fetchSimulation(2).then((data1) => {
-  fetchSimulation(4).then((data2) => {
-    fetchSimulation(6).then((data3) => {
-      let result = data1.number + data2.number + data3.number
-      console.log("The result is: " + result);
-    })
+
+// requestData(2)
+// requestData(1)
+
+// fetch(2).then((data) => {
+//   console.log(data.data);
+// })
+
+// fetch(1).then((data) => {
+//   console.log(data.data);
+// }).catch((err) => {
+//   console.log(err);
+// })
+
+// console.log("Log: " + 1);
+// console.log("Log: " + 2);
+
+
+
+async function overallFunction() {
+  try {
+    let data1 = await fetch(2)
+    console.log("This is the result of the first fetch: ",data1.number);
+    console.log("Log: " + 1);
+    let data2 = await fetch(3)
+    console.log("This is the result of the first fetch: ",data2.number);
+    console.log("Log: " + 2);
+  } catch (error) {
+    console.log("Something went wrong during execution.", error);
+  }
+}
+//overallFunction()
+
+fetch(2).then((data1) => {
+  console.log("This is the result of the first fetch: ",data1.number);
+  console.log("Log: " + 1);
+  fetch(3).then((data2) => {
+    console.log("This is the result of the first fetch: ",data2.number);
+    console.log("Log: " + 2);
+  }).catch((err) => {
+    console.log("Something went wrong during execution.", err);
   })
+}).catch((err) => {
+  console.log("Something went wrong during execution.", err);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+// fetch("http://localhost:3001/16").then((resp) => {
+//   resp.json().then((data) => {
+//     console.log(data);
+//   })
+// })
+
+// async function fetchSomeData() {
+//   let resp = await fetch("http://localhost:3001/16")
+//   let data = await resp.json()
+//   console.log(data);
+// }
+// fetchSomeData()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,7 +6,7 @@ const data = {
     skills: ["IT","Math","Communication"],
     age: 35
 }
-const error = "This is an error message!"
+const error = {message: "This is an error message!"}
 
 app.use("/", (req,res,next) => {
     console.log(("Request came in!"));
@@ -19,7 +19,7 @@ app.get("/:number", (req,res) => {
         res.json(data)
     }
     else {
-        res.status(400).json({"error": error})
+        res.status(500).json(error)
     }
 })
 
