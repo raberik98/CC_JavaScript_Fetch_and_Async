@@ -1,10 +1,16 @@
 const express = require("express")
 const app = express()
 
+// const data = {
+//     name: "Professor",
+//     skills: ["IT","Math","Communication"],
+//     age: 35
+// }
+
 const data = {
-    name: "Professor",
-    skills: ["IT","Math","Communication"],
-    age: 35
+    erik: { name: "Erik", salary: 500000 },
+    peti: { name: "Peti", salary: 600000 },
+    anita: { name: "Anita", salary: 1000000 },
 }
 const error = {message: "This is an error message!"}
 
