@@ -1,122 +1,165 @@
-// import fetch from "node-fetch";
+import fetch from "node-fetch";
 
-const fetch = (number) => {
-  const data = {
-        name: "Professor",
-        skills: ["IT","Math","Communication"],
-        age: 35
-  }
-  const error = "This is an error message!"
+// const fetch = (number) => {
+//   const data = {
+//         name: "Professor",
+//         skills: ["IT","Math","Communication"],
+//         age: 35
+//   }
+//   const error = "This is an error message!"
 
-  return new Promise((resolve, reject) => {
-    if (number % 2 == 0) {
-        resolve({data:data, number: number})
-    }
-    else {
-        reject(`\t${error} ${number}`)
-    }
-  });
-}
-
-// async function name() {
-//   let resp = await fetch("http://localhost:3001/2")
-//   //console.log(resp);
-//   let data = await resp.json()
-//   console.log(data);
-//  // console.log(`The age key value pair is: ${data.age}`);
+//   return new Promise((resolve, reject) => {
+//     if (number % 2 == 0) {
+//         resolve({data:data, number: number})
+//     }
+//     else {
+//         reject(`\t${error} ${number}`)
+//     }
+//   });
 // }
 
-async function requestData(number) {
-  try {
-    let data = await fetch(number)
-    return data
-  } catch (error) {
-    console.log(error);
-  }
-}
 
-
-// requestData(2)
-// requestData(1)
 
 // fetch(2).then((data) => {
-//   console.log(data.data);
+//   console.log("SUCCESS", data.number);
+// }).catch((err) => {
+//   console.log("ERROR",err.number);
+// })
+// fetch(3).then((data) => {
+//   console.log("SUCCESS", data.number);
+// }).catch((err) => {
+//   console.log("ERROR",err);
+// })
+// fetch(4).then((data) => {
+//   console.log("SUCCESS", data.number);
+// }).catch((err) => {
+//   console.log("ERROR",err.number);
 // })
 
-// fetch(1).then((data) => {
-//   console.log(data.data);
+
+// fetch(2).then((data) => {
+//   console.log("SUCCESS", data.number)
+//   fetch(3).then((data1) => {
+//     console.log("SUCCESS", data1.number)
+//     fetch((data2) => {
+//       console.log("SUCCESS", data2.number)
+//     }).catch((err2) =>{
+//       console.log("ERROR",err2)
+//     })
+//   }).catch((err1) => {
+//     console.log("ERROR",err1)
+//   })
+// })
+// .catch((err) => { console.log("ERROR",err)})
+
+// async function fetchData() {
+
+//     try {
+//       let data = await fetch(2)
+//       console.log("SUCCESS", data.number);
+//     } catch (error) {
+//       console.log("ERROR",error)
+//     }
+
+//     try {
+//       let data = await fetch(3)
+//       console.log("SUCCESS", data.number);
+//     } catch (error) {
+//       console.log("ERROR",error)
+//     }
+
+//     try {
+//       let data = await fetch(4)
+//       console.log("SUCCESS", data.number);
+//     } catch (error) {
+//       console.log("ERROR",error)
+//     }
+  
+// }
+
+// fetchData()
+
+// async function fetchAPIOne() {
+//   return fetch("http://localhost:3001/2").then((resp) => (resp.json()))
+// }
+
+// async function fetchAPITwo() {
+//   return fetch("http://localhost:3001/4").then((resp) => (resp.json()))
+// }
+
+// async function fetchAPIThree() {
+//   return fetch("http://localhost:3001/5").then((resp) => (resp.json()))
+// }
+
+// async function fetchAllData() {
+//   let data1 = await fetchAPIOne()
+//   let data2 = await fetchAPITwo()
+//   let data3 = await fetchAPIThree()
+
+//   console.log(data1);
+//   console.log(data2);
+//   console.log(data3);
+
+// }
+
+// fetchAllData()
+
+
+// async function fetchAllData() {
+//   let starterDataJson = await fetch()
+//   let starterData = await starterDataJson.json()
+//   return starterData
+// }
+
+
+// async function transformData(starterData) {
+
+//   let result = []
+
+//   for (const key in starterData) {
+//     result.push(starterData[key])
+//   }
+//   return result
+// }
+
+// function getNerbyCountries(countryObject, countryShortName) {
+//   return countryObject[countryShortName].borders
+// }
+
+
+// async function main() {
+//   let objectData = await fetchAllData()
+//   let data = transformData(objectData)
+
+//   let affriceNeighbor = getNerbyCountries(objectData, "af")
+//   console.log(affriceNeighbor);
+
+// }
+
+// main()
+
+
+
+
+
+// fetch("http://localhost:3001/3").then((resp) => (  resp.json() )).then((data) => {
+//   console.log(data)
 // }).catch((err) => {
+//   console.log("catchj branch");
 //   console.log(err);
 // })
 
-// console.log("Log: " + 1);
-// console.log("Log: " + 2);
-
-
-
-async function overallFunction() {
-  try {
-    let data1 = await fetch(2)
-    console.log("This is the result of the first fetch: ",data1.number);
-    console.log("Log: " + 1);
-    let data2 = await fetch(3)
-    console.log("This is the result of the first fetch: ",data2.number);
-    console.log("Log: " + 2);
-  } catch (error) {
-    console.log("Something went wrong during execution.", error);
-  }
-}
-//overallFunction()
-
-fetch(2).then((data1) => {
-  console.log("This is the result of the first fetch: ",data1.number);
-  console.log("Log: " + 1);
-  fetch(3).then((data2) => {
-    console.log("This is the result of the first fetch: ",data2.number);
-    console.log("Log: " + 2);
-  }).catch((err) => {
-    console.log("Something went wrong during execution.", err);
-  })
-}).catch((err) => {
-  console.log("Something went wrong during execution.", err);
-})
-
-
-
-
-
-
-
-
-
-
-
-
-// fetch("http://localhost:3001/16").then((resp) => {
-//   resp.json().then((data) => {
+// async function fetchData(string) {
+//   try {
+//     let resp = await fetch(string)
+//     let data = await resp.json()
 //     console.log(data);
-//   })
-// })
-
-// async function fetchSomeData() {
-//   let resp = await fetch("http://localhost:3001/16")
-//   let data = await resp.json()
-//   console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
 // }
-// fetchSomeData()
 
-
-
-
-
-
-
-
-
-
-
-
-
+// fetchData("http://localhost:3001/2")
 
 
 
