@@ -4,7 +4,8 @@ const app = express()
 const data = {
     name: "Professor",
     skills: ["IT","Math","Communication"],
-    age: 35
+    age: 35,
+    numbers: [ 1, 1, 2, 2, 3, 3, 4, 4 ]
 }
 const error = {message: "This is an error message!"}
 
@@ -23,4 +24,6 @@ app.get("/:number", (req,res) => {
     }
 })
 
-app.listen(3000, ()=> {console.log("Backend running at port: 3001");})
+app.listen(3000, ()=> {console.log("Backend running at port: 3000");})
+
+//https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
