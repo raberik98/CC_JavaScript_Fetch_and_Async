@@ -22,6 +22,9 @@ app.get("/simulateError", (req,res) => {
     res.status(500).json(error)
 })
 
+app.get("/404", (req,res) => {
+    res.status(404).json({message: "404"})
+})
 app.listen(3000, ()=> {console.log("Backend running at port: 3000");})
 
 //https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
