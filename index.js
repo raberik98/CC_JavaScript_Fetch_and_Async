@@ -2,19 +2,17 @@ const express = require("express")
 const app = express()
 
 const data = {
-    name: "Professor",
-    skills: ["IT","Math","Communication"],
-    age: 35,
-    numbers: [ 1, 1, 2, 2, 3, 3, 4, 4 ]
+    message: "Itt a liszted tesám",
+    item: "liszt"
 }
-const error = {message: "This is an error message!"}
+const error = {message: "Bocs tesám nincs lisztem!"}
 
 app.use("/", (req,res,next) => {
     console.log(("Request came in!"));
     next()
 })
 
-app.get("/data", (req,res) => {
+app.get("/", (req,res) => {
     res.json(data)
 })
 
